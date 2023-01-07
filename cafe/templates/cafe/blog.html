@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+    
+        <title>MI CAFE - Blog sobre tus cafes favoritos</title>
+
+
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'cafe/css/styles.css' %}" rel="stylesheet" />
+        <style>
+            .img {
+                width: 50px;
+                height: 50px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">Blog sobre tus cafes favoritos</span>
+                <span class="site-heading-lower">MI CAFE</span>
+            </h1>
+        </header>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'inicio' %}">Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'about' %}">About</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'blog' %}">Blog</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'messages' %}">Mensajeria</a></li>
+                        <p>-------------------------
+
+                            
+                        </p>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'profile' %}">Perfil</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'agregarAvatar' %}">Avatar</a></li>
+                        <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'register' %}">Register</a></li>
+                        {% endif %}
+
+                        <img src="{{ imagen }}" class="img" alt="">
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'cafe/assets/img/products-03.jpg' %}" alt="..." />
+                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">Tu cafe Favorito</span>
+                                <span class="section-heading-lower">BLOGS</span>
+                            </h2>
+                            <p class="mb-3">Este espacio es para que puedas compartir tus cafes favoritos y que puedas tambien leer los que otros amantes compartieron</p>
+                            <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{% url 'pages' %}">Ver todos!</a></div>
+                            <p> .................................
+                            </p>
+
+                            
+                            <span class="section-heading-upper">CAFE CUBANO</span>
+                            <p><img src = "https://www.foodandwine.com/thmb/7ZbI_LKcZAnUsQz3F0Alm4hqa6c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/200905-xl-cafe-cubano-2000-3a48b1dc578b4ee3a6bb555957cd72cd.jpg" width="100" height="=100" </p>
+                            <p class="mb-3">Un cafe que te va a enamorar </p>
+                            <p class="mb-3">Café Cubano es un tipo de espresso que se originó en Cuba. Específicamente, se refiere a un trago de espresso que se endulza. Sin embargo, el nombre a veces se usa para referirse a bebidas a base de café que incluyen espresso cubano como ingrediente principal, como el café con leche</p>
+                            <p class="mb-3">20/11/2022</p>
+                            <p class="mb-3">Laura Gimenez</p>
+                            <p>..................................</p>
+                            <span class="section-heading-upper">CAFE IRLANDES</span>
+                            <p><img src = "https://elcoctelero.com/wp-content/uploads/2021/06/coctel-cafe-irlandes.jpg" width="100" height="=100" </p>
+                            <p class="mb-3">Un cafe para viajar </p>
+                            <p class="mb-3">El Café irlandés o Irish coffee es un cóctel que consiste en la mezcla de whisky irlandés, una cucharada de azúcar, café y finalmente va cubierto por dos centímetros de crema de leche o nata semimontada</p>
+                            <p class="mb-3">15/12/2022</p>
+                            <p class="mb-3">Marcos Lopez</p>
+
+
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">Ingresa aqui tu cafe favorito y contamos por que lo es!</span>
+                            
+                        </h2>
+                        <form action="{% url 'blog' %}" method="POST"> {% csrf_token %}
+                            
+                            <table>
+                            
+
+                                {{ form.as_table }}
+
+                            </table>
+                            <input type="submit" value="INGRESAR">
+                        </form>
+                        
+                        {{ mensaje }}
+        
+                    
+                </div>
+            </div>
+      
+    </body>
+</html>
